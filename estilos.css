@@ -1,0 +1,446 @@
+/* ----- Variables de Color y Fuentes (Temática Cleopatra) ----- */
+:root {
+    --color-primario: #4A2F20; /* Marrón oscuro, como madera antigua o tierra */
+    --color-secundario: #DAA520; /* Dorado, opulencia */
+    --color-acento: #003366; /* Azul Nilo profundo o Lapislázuli */
+    --color-fondo: #FDF5E6; /* Arena claro, papiro envejecido */
+    --color-texto: #333333;
+    --color-blanco: #FFFFFF;
+
+    --fuente-titulos: 'Cinzel', serif; /* Fuente elegante, con serifa, tipo grabado antiguo */
+    --fuente-cuerpo: 'Roboto', sans-serif; /* Fuente legible para el cuerpo */
+
+    --sombra-caja: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ----- Estilos Generales ----- */
+body {
+    font-family: var(--fuente-cuerpo);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-primario);
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 0.2em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 1em;
+    text-align: center;
+    padding-top: 1.5em; /* Espacio antes de cada sección */
+    border-top: 1px solid var(--color-secundario); /* Línea divisoria sutil */
+}
+
+h2::after { /* Detalle decorativo para los títulos de sección */
+    content: "⚜"; /* Flor de Lis o algún jeroglífico simple */
+    display: block;
+    font-size: 0.5em;
+    color: var(--color-secundario);
+    margin-top: 0.2em;
+}
+
+a {
+    color: var(--color-acento);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--color-secundario);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ----- Banner Principal ----- */
+.banner-principal {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/banner_egipto.jpg') no-repeat center center/cover; /* Reemplaza con una imagen de fondo temática */
+    color: var(--color-blanco);
+    padding: 4em 0;
+    text-align: center;
+}
+
+.banner-principal #logo {
+    max-width: 150px; /* Ajusta según tu logo */
+    margin: 0 auto 1em;
+}
+
+.banner-principal h1 {
+    color: var(--color-blanco); /* El H1 dentro del banner será blanco */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+.banner-principal h1::after { /* Quitar el detalle dorado del H1 principal */
+    content: "";
+}
+
+
+.subtitulo-banner {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #f0e68c; /* Un dorado más pálido para el subtítulo */
+}
+
+/* ----- Navegación Principal ----- */
+.navegacion-principal {
+    background-color: var(--color-primario);
+    padding: 1em 0;
+    position: sticky; /* Para que la barra de nav se quede fija al hacer scroll */
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--sombra-caja);
+}
+
+.navegacion-principal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.navegacion-principal ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navegacion-principal ul li a {
+    color: var(--color-blanco);
+    font-family: var(--fuente-titulos);
+    font-size: 1.1em;
+    padding: 0.5em 0;
+    position: relative;
+}
+.navegacion-principal ul li a::after { /* Efecto hover para enlaces de nav */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--color-secundario);
+    transition: width 0.3s ease;
+}
+.navegacion-principal ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: var(--color-secundario);
+}
+
+
+/* ----- Contenido Principal ----- */
+.contenido-principal {
+    padding: 2em 0;
+}
+
+/* ----- Hero Section ----- */
+#hero {
+    text-align: center;
+    padding: 2em 0;
+    margin-bottom: 2em;
+}
+#hero h2 {
+    border-top: none; /* No queremos doble borde en el primer título */
+}
+
+.boton-principal {
+    display: inline-block;
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+    padding: 0.8em 1.5em;
+    border: none;
+    border-radius: 5px;
+    font-family: var(--fuente-titulos);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.boton-principal:hover {
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* ----- Sección de Productos ----- */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Diseño responsive */
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.producto {
+    background-color: var(--color-blanco);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5em;
+    text-align: center;
+    box-shadow: var(--sombra-caja);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.producto img {
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes de producto */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1em;
+    border-radius: 5px 5px 0 0;
+}
+
+.producto h3 {
+    font-size: 1.4em;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
+    color: var(--color-primario);
+}
+
+.descripcion-producto {
+    font-size: 0.9em;
+    color: #555;
+    min-height: 3em; /* Para alinear descripciones cortas */
+}
+
+.precio-producto {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--color-acento);
+    margin: 0.5em 0;
+}
+
+.boton-agregar-carrito {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    padding: 0.7em 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--fuente-cuerpo);
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.boton-agregar-carrito:hover {
+    background-color: var(--color-acento);
+}
+
+/* ----- Sección Información (Nosotros) ----- */
+.seccion-info {
+    background-color: var(--color-blanco);
+    padding: 2em;
+    margin-top: 2em;
+    border-radius: 8px;
+    box-shadow: var(--sombra-caja);
+}
+.seccion-info p {
+    text-align: justify;
+}
+
+/* ----- Carrito Lateral ----- */
+.carrito-lateral {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Inicialmente fuera de la pantalla */
+    width: 380px;
+    height: 100%;
+    background-color: var(--color-fondo);
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    z-index: 1001;
+    padding: 20px;
+    transition: right 0.4s ease-in-out;
+    overflow-y: auto;
+    border-left: 2px solid var(--color-secundario);
+}
+.carrito-lateral.abierto {
+    right: 0;
+}
+.carrito-lateral h3 {
+    margin-top: 0;
+    color: var(--color-primario);
+    border-bottom: 1px solid var(--color-secundario);
+    padding-bottom: 0.5em;
+}
+#lista-carrito-items .item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dotted #ccc;
+    font-size: 0.9em;
+}
+#lista-carrito-items .item-carrito img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+#lista-carrito-items .item-carrito .info-item p {
+    margin: 0;
+}
+#lista-carrito-items .item-carrito .info-item .nombre-item-carrito {
+    font-weight: bold;
+}
+#lista-carrito-items .item-carrito .cantidad-item-carrito {
+    margin: 0 10px;
+}
+#lista-carrito-items .item-carrito .boton-eliminar-item {
+    background-color: #d9534f; /* Rojo para eliminar */
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+#lista-carrito-items .item-carrito .boton-eliminar-item:hover {
+    background-color: #c9302c;
+}
+.total-carrito {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: right;
+    margin-top: 20px;
+    color: var(--color-primario);
+}
+#boton-cerrar-carrito {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+#boton-cerrar-carrito:hover {
+    background: var(--color-acento);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+    display: none; /* Oculto por defecto */
+}
+.overlay.activo {
+    display: block;
+}
+
+
+/* ----- Pie de Página ----- */
+.pie-pagina {
+    background-color: var(--color-primario);
+    color: #E0E0E0; /* Un gris claro para el texto del footer */
+    padding: 2.5em 0;
+    margin-top: 3em;
+    text-align: center;
+}
+
+.columnas-footer {
+    display: flex;
+    flex-wrap: wrap; /* Para que las columnas se ajusten en pantallas pequeñas */
+    justify-content: space-between;
+    gap: 1.5em;
+    margin-bottom: 1.5em;
+    text-align: left;
+}
+
+.columna {
+    flex: 1;
+    min-width: 200px; /* Ancho mínimo para cada columna */
+}
+
+.columna h4 {
+    color: var(--color-secundario);
+    margin-bottom: 0.8em;
+    font-size: 1.2em;
+}
+
+.columna ul {
+    list-style: none;
+    padding: 0;
+}
+
+.columna ul li a, .columna p, .columna a {
+    color: #E0E0E0;
+    font-size: 0.9em;
+    line-height: 1.8;
+}
+.columna ul li a:hover, .columna a:hover {
+    color: var(--color-blanco);
+    text-decoration: underline;
+}
+
+.copyright {
+    font-size: 0.9em;
+    padding-top: 1.5em;
+    border-top: 1px solid var(--color-secundario);
+}
+
+/* ----- Media Queries para Responsividad ----- */
+@media (max-width: 768px) {
+    .banner-principal h1 {
+        font-size: 2em;
+    }
+    .subtitulo-banner {
+        font-size: 1em;
+    }
+    .navegacion-principal ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    .grid-productos {
+        grid-template-columns: 1fr; /* Una columna en móviles */
+    }
+    .producto img {
+        height: 250px; /* Ajustar altura en móviles si es necesario */
+    }
+    .columnas-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .columna {
+        margin-bottom: 1.5em;
+    }
+    .carrito-lateral {
+        width: 90%;
+        right: -100%; /* Ajustar para pantalla completa */
+    }
+    .carrito-lateral.abierto {
+        right: 0;
+    }
+}
