@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Tienda Virtual Inspirada en Cleopatra - Tesoros del Nilo">
+
+    <title>Tesoros de Cleopatra - Tienda Virtual</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header class="banner-principal">
+
+        <div class="contenedor">
+
+            <img src="img/logo_cleopatra.png" alt="Logo Tesoros de Cleopatra" id="logo" /> <h1>Tesoros de Cleopatra</h1>
+
+            <p class="subtitulo-banner">Joyas y Artefactos Inspirados en el Antiguo Egipto</p>
+
+        </div>
+
+    </header>
+
+
+
+    <nav class="navegacion-principal">
+
+        <div class="contenedor">
+
+            <ul>
+
+                <li><a href="#">Inicio</a></li>
+
+                <li><a href="#productos">Productos</a></li>
+
+                <li><a href="#nosotros">Sobre Nosotros</a></li>
+
+                <li><a href="#contacto">Contacto</a></li>
+
+                <li><a href="#" id="ver-carrito">Carrito (<span id="items-carrito">0</span>)</a></li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+
+
+    <main class="contenido-principal">
+
+        <div class="contenedor">
+
+            <section id="hero">
+
+                <h2>Descubre la Magia del Nilo</h2>
+
+                <p>Explora nuestra colección exclusiva de artículos que capturan la esencia de una era legendaria.</p>
+
+                <a href="#productos" class="boton-principal">Ver Colección</a>
+
+            </section>
+
+
+
+            <section id="productos" class="seccion-productos">
+
+                <h2>Nuestros Tesoros</h2>
+
+                <div class="grid-productos">
+
+                    <article class="producto">
+
+                        <img src="img/producto1_collar_escarabajo.jpg" alt="Collar Escarabajo Dorado"> <h3>Collar Escarabajo Dorado</h3>
+
+                        <p class="descripcion-producto">Réplica de amuleto de la suerte, bañado en oro.</p>
+
+                        <p class="precio-producto">$75.00</p>
+
+                        <button class="boton-agregar-carrito" data-id="1" data-nombre="Collar Escarabajo Dorado" data-precio="75.00">Agregar al Carrito</button>
+
+                    </article>
+
+
+
+                    <article class="producto">
+
+                        <img src="img/producto2_brazalete_serpiente.jpg" alt="Brazalete Serpiente de Aspid"> <h3>Brazalete Serpiente de Áspid</h3>
+
+                        <p class="descripcion-producto">Elegante brazalete que evoca el poder real.</p>
+
+                        <p class="precio-producto">$120.00</p>
+
+                        <button class="boton-agregar-carrito" data-id="2" data-nombre="Brazalete Serpiente de Áspid" data-precio="120.00">Agregar al Carrito</button>
+
+                    </article>
+
+
+
+                    <article class="producto">
+
+                        <img src="img/producto3_papiro_real.jpg" alt="Papiro Real Decorativo"> <h3>Papiro Real Decorativo</h3>
+
+                        <p class="descripcion-producto">Fragmento de papiro con jeroglíficos pintados a mano.</p>
+
+                        <p class="precio-producto">$45.00</p>
+
+                        <button class="boton-agregar-carrito" data-id="3" data-nombre="Papiro Real Decorativo" data-precio="45.00">Agregar al Carrito</button>
+
+                    </article>
+
+
+
+                    </div>
+
+            </section>
+
+
+
+            <section id="nosotros" class="seccion-info">
+
+                <h2>La Leyenda Detrás de la Tienda</h2>
+
+                <p>En Tesoros de Cleopatra, nos dedicamos a revivir la opulencia y el misterio del antiguo Egipto. Cada pieza es seleccionada o creada con una profunda admiración por la historia y el legado de la última faraona de Egipto.</p>
+
+                <p>Nuestra misión es ofrecerte no solo un producto, sino una experiencia que te transporte a las orillas del Nilo.</p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <aside id="carrito-compras" class="carrito-lateral">
+
+        <h3>Tu Carrito de Compras</h3>
+
+        <div id="lista-carrito-items">
+
+            <p>Tu carrito está vacío.</p>
+
+        </div>
+
+        <p class="total-carrito">Total: $<span id="total-precio-carrito">0.00</span></p>
+
+        <button class="boton-principal" id="boton-finalizar-compra">Finalizar Compra</button>
+
+        <button id="boton-cerrar-carrito">Cerrar</button>
+
+    </aside>
+
+    <div id="overlay-carrito" class="overlay"></div>
+
+
+
+
+
+    <footer class="pie-pagina">
+
+        <div class="contenedor">
+
+            <div class="columnas-footer">
+
+                <div class="columna">
+
+                    <h4>Navegación</h4>
+
+                    <ul>
+
+                        <li><a href="#">Inicio</a></li>
+
+                        <li><a href="#productos">Productos</a></li>
+
+                        <li><a href="#">Política de Privacidad</a></li>
+
+                        <li><a href="#">Términos de Servicio</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="columna" id="contacto">
+
+                    <h4>Contacto</h4>
+
+                    <p>Email: info@tesorosdecleopatra.com</p>
+
+                    <p>Teléfono: +123 456 7890</p>
+
+                    <p>El Cairo, Egipto (Dirección Ficticia)</p>
+
+                </div>
+
+                <div class="columna">
+
+                    <h4>Síguenos</h4>
+
+                    <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Pinterest</a>
+
+                </div>
+
+            </div>
+
+            <p class="copyright">&copy; <span id="currentYear"></span> Tesoros de Cleopatra. Todos los derechos reservados.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
